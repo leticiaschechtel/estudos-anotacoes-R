@@ -1,0 +1,10 @@
+git config --global user.name "leticiaschechtel"
+git config --global user.email "leticiaschechtel@gmail.com"
+git config --list
+/cloud/project$ 
+git clone https://github.com/leticiaschechtel/estudos-anotacoes-R.git
+git pull origin main
+ls
+cd estudos-anotacoes-R
+git status
+git add comando terminal
