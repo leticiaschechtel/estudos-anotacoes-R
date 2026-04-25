@@ -95,3 +95,5 @@ ggplot(data = dados_finais, aes(x = DSPI, y = PCE)) +
        x = "Renda Pessoal Disponível (DSPI)",
        y = "Despesas de Consumo Pessoal (PCE)") +
   theme_minimal()
+
+![Título da Imagem](https://f1ffc8c5cea944c0a9f4f6dc990cb910.app.posit.cloud/graphics/plot_zoom?width=1200&height=622&scale=1)
