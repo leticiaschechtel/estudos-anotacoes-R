@@ -1,0 +1,97 @@
+ AULA DE ECONOMETRIA (24/04/2026) APLICADA ####
+  'OBJETIVO - Estimar e interpretar uma função de regressão 
+  linear simples
+   TEMA - Função Consumo Keynesiana'
+
+# 1. PACOTES NECESSÁRIOS ####
+library(quantmod)       ## Baixar dados financeiros e macroeconomicos
+'Quantitative Financial Modelling Framework - pacote de entrega de
+dados financeiros e macroeconômicos'
+library(ggplot2)        ## gráficos estruturados
+library(stargazer)      ## tabelas organizadas
+
+# 2. IMPORTAÇÃO DOS DADOS ####
+'Vamos buscar os dados diretamente do FED (Federal Reserve)
+Federal Reserve Economic Data (FRED) - https://fred.stlouisfed.org/
+- PCE  = Personal Consumption Expenditures (Despesas de Consumo Pessoal)
+- DSPI = Disposable Personal Income (Renda Pessoal Disponível)'
+
+getSymbols("PCE", src = 'FRED')
+getSymbols("DSPI", src = "fred")
+'Está dando erro'
+
+# ====================================================================
+# O PLANO B: Importação direta via URL
+# ====================================================================
+
+# Links diretos para os arquivos CSV no servidor do FRED
+url_pce  <- 
+url_dspi <- DSPI.csv
+
+    library(readr)
+      DSPI <- read_csv("economia/trabalho_24_4/DSPI.csv")
+        View(DSPI)
+
+    library(readr)
+      PCE <- read_csv("economia/trabalho_24_4/PCE.csv")
+        View(PCE)
+
+# 2. Importação
+  # O R vai até a internet e converte o link em uma tabela
+      dados_consumo <- PCE
+      dados_renda   <- DSPI
+
+# 3. Tratamento de Dados ####
+    'Juntamos as duas tabelas usando a coluna de data como chave'
+      
+      dados_finais <- merge(dados_consumo, dados_renda, by = "observation_date")
+
+# Vamos olhar as primeiras linhas para ver se deu certo!
+  head(dados_finais)
+
+  tail(dados_finais)
+
+  ### Em série temporal não importa o tanto de dados, ela precisa da padronização dos dados e propor a função NA.MEET
+# 4. ANÁLISE EXPLORATÓRIA (Gráfico de Dispersão)
+'Antes de estimar, o econometrista deve olhar para os dados'
+      ggplot(data = dados_finais, aes(x = DSPI, y = PCE)) +
+        geom_point()
+      
+      ### aes são os eixos (X é a renda disponível) (Y é o consumo) Demonstra os dados e os eixos
+      ### O "+" demonstra o que você deseja plotar 
+
+# 5. ESTIMAÇÃO DO MODELO ####
+'Modelo: Consumo = Beta0 + Beta1 * Renda + Erro'
+modelo <- lm(PCE ~ DSPI, data = dados_finais)
+
+# 6. INFERÊNCIA E RESULTADOS (Gujarati Cap. 5) ####
+'Vamos ver os coeficientes, os testes t e o R-quadrado'
+summary(modelo)
+
+# Organizando numa tabela que vai para o artigo final #
+stargazer(modelo, type = "text")
+
+# Outra possibilidade mais completa #
+stargazer(modelo, 
+          type = "text", 
+          title = "Resultados da Estimativa da Função Consumo (MQO)",
+          covariate.labels = c("Renda Disponível (DSPI)"), # Nome para o X
+          dep.var.labels = c("Despesas de Consumo (PCE)"), # Nome para o Y
+          digits = 3) # Arredonda para 3 casas decimais para não poluir a tabela
+
+
+# Salvando em formato word #
+stargazer(modelo, 
+          type = "html", 
+          out = "tabela_regressao.doc")
+
+
+# Gráfico com todas as informações #
+ggplot(data = dados_finais, aes(x = DSPI, y = PCE)) +
+  geom_point(color = "darkblue", alpha = 0.5) +
+  geom_smooth(method = "lm", color = "red") +
+  labs(title = "Função Consumo: PCE vs Renda Disponível",
+       subtitle = "Dados do Federal Reserve (EUA)",
+       x = "Renda Pessoal Disponível (DSPI)",
+       y = "Despesas de Consumo Pessoal (PCE)") +
+  theme_minimal()
