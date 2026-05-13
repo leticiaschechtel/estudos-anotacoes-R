@@ -96,4 +96,4 @@ ggplot(data = dados_finais, aes(x = DSPI, y = PCE)) +
        y = "Despesas de Consumo Pessoal (PCE)") +
   theme_minimal()
 
-![Título da Imagem](https://f1ffc8c5cea944c0a9f4f6dc990cb910.app.posit.cloud/graphics/plot_zoom?width=1200&height=622&scale=1)
+![Plot](https://github.com/leticiaschechtel/estudos-anotacoes-R/blob/4c8059f7c8dc6070e98017123452533050534e6b/Fun%C3%A7%C3%A3o%20Consumo%20PCE%20vs%20Renda%20Dispon%C3%ADvel.png)
