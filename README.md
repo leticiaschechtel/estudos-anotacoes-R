@@ -1,20 +1,23 @@
-# Estudos e Anotações em R
+# Estudos em R - Ciências Econômicas
 
-> Um repositório dedicado a estudos, exercícios e anotações sobre programação em **R**.
+> Repositório com anotações, exercícios e projetos de análise de dados econômicos usando **R**. Desenvolvido durante a graduação na UEPG.
 
-## Sobre
+---
 
-Este repositório contém materiais de aprendizado em R, incluindo:
--  Anotações teóricas
--  Exercícios práticos
--  Análises e manipulação de dados
--  Visualizações
+## Estrutura do Repositório
+
+- **Fundamentos**: Conceitos básicos de R
+- **Manipulação de Dados**: dplyr, tidyr, data.table
+- **Análise Exploratória**: EDA e estatística descritiva
+- **Visualização**: ggplot2 e afins
+- **Economia**: Análises aplicadas à economia brasileira
+- **Projetos**: Trabalhos práticos e integradores
 
 **Foco em economia, análise de dados econômicos e preparação para trabalho acadêmico.**
 
 ---
 
-##  Tecnologias
+## Stack-Tecnologias
 
 - **R** - Linguagem de programação estatística
 - **RStudio** - Ambiente de desenvolvimento
@@ -22,14 +25,12 @@ Este repositório contém materiais de aprendizado em R, incluindo:
 
 ---
 
-## Tópicos Abordados
+##  Projetos Destaque
 
-* Fundamentals de R
-* Manipulação de dados
-* Análise exploratória
-* Visualização de dados
-* Estatística
-* Análise econômica
+| Projeto | Descrição | Disciplina |
+|---------|-----------|-----------|
+| [Análise IPCA 2024](./05-economia/analise-ipca.R) | Análise de inflação acumulada | Economia Brasileira |
+| [Desemprego PNADC](./05-economia/desemprego.R) | Série temporal de desemprego | Macroeconomia |
 
 ---
 
