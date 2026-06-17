@@ -1,5 +1,0 @@
-#**Pipeline de finanças 2026**
-##**Objetivo geral**
-Automatizar e organizar a análise semanal dos lançamentos financeiros, integrando Excel, R e Power BI, com foco em eficiência, privacidade e visualização de dados.
-
-**Atualmente os dados estão sendo organizados em Power BI**   
