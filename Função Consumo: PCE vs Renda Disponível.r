@@ -1,4 +1,5 @@
- AULA DE ECONOMETRIA (24/04/2026) APLICADA ####
+# Aplicação em Econometria 16/6/2026
+
   'OBJETIVO - Estimar e interpretar uma função de regressão 
   linear simples
    TEMA - Função Consumo Keynesiana'
@@ -25,8 +26,9 @@ getSymbols("DSPI", src = "fred")
 # ====================================================================
 
 # Links diretos para os arquivos CSV no servidor do FRED
-url_pce  <- 
-url_dspi <- DSPI.csv
+
+url_pce  <- "https://fred.stlouisfed.org/data/PCE.csv"
+url_dspi <- "https://fred.stlouisfed.org/data/DSPI.csv"
 
     library(readr)
       DSPI <- read_csv("economia/trabalho_24_4/DSPI.csv")
@@ -97,3 +99,6 @@ ggplot(data = dados_finais, aes(x = DSPI, y = PCE)) +
   theme_minimal()
 
 ![Plot](https://github.com/leticiaschechtel/estudos-anotacoes-R/blob/4c8059f7c8dc6070e98017123452533050534e6b/Fun%C3%A7%C3%A3o%20Consumo%20PCE%20vs%20Renda%20Dispon%C3%ADvel.png)
+
+---
+ ' Desenvolvido em sala de aula 
