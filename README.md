@@ -22,16 +22,7 @@
 - **R** - Linguagem de programação estatística
 - **RStudio** - Ambiente de desenvolvimento
 - **Posit Cloud** - Estudos fora da IDE
-
----
-
-##  Projetos Destaque
-
-| Projeto | Descrição | Disciplina |
-|---------|-----------|-----------|
-| [Análise IPCA 2024](./05-economia/analise-ipca.R) | Análise de inflação acumulada | Economia Brasileira |
-| [Desemprego PNADC](./05-economia/desemprego.R) | Série temporal de desemprego | Macroeconomia |
-
+  
 ---
 
 ## Licença
