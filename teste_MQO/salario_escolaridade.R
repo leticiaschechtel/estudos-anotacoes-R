@@ -32,4 +32,12 @@ print(paste("Salario medio por hora: $", round(media_salario, 2)))
 ### A função mais
 #### O numero de *** demonstra a significância da variável
 
+#### Plot
+
+ggplot(data.frame(capital, producao), aes(x = capital, y = producao)) +
+  geom_point() +
+  labs(title = "Produção vs. Capital",
+       x = "Capital",
+       y = "Produção") +
+  theme_minimal()
     
