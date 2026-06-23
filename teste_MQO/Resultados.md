@@ -11,7 +11,8 @@ Residuals:
 
 Coefficients:
 
-            Estimate Std. Error t value Pr(>|t|)    
+Estimate Std. Error t value Pr(>|t|)    
+
 (Intercept) -0.05353    0.11222  -0.477    0.634    
 ln_K         0.40460    0.01744  23.205   <2e-16 ***
 ln_L         0.60637    0.02034  29.810   <2e-16 ***
